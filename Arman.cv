@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arman - QA Engineer & SDET Resume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            color: #2d3748;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+        
+        /* Header Section with Aurora Gradient */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+            background-size: 400% 400%;
+            animation: aurora 15s ease infinite;
+            color: white;
+            padding: 50px 60px;
+            position: relative;
+        }
+        
+        @keyframes aurora {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .name {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .title {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0.95;
+            margin-bottom: 24px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: 400;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-item svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.9;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 50px 60px;
+        }
+        
+        .section {
+            margin-bottom: 36px;
+        }
+        
+        .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #667eea;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea 0%, transparent 100%);
+            opacity: 0.3;
+        }
+        
+        .summary {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #4a5568;
+            text-align: justify;
+        }
+        
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        
+        .skill-category {
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-category h4 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .skill-list {
+            font-size: 13px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+        
+        /* Experience Section */
+        .experience-item {
+            margin-bottom: 28px;
+            padding-left: 24px;
+            border-left: 3px solid #e2e8f0;
+            position: relative;
+        }
+        
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 2px solid white;
+            box-shadow: 0 0 0 3px #e2e8f0;
+        }
+        
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .exp-title {
+            font-size: 17px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+        
+        .exp-company {
+            font-size: 14px;
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .exp-meta {
+            font-size: 13px;
+            color: #718096;
+            font-weight: 500;
+        }
+        
+        .exp-details {
+            list-style: none;
+            margin-top: 12px;
+        }
+        
+        .exp-details li {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .exp-details li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .tech-stack {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 12px;
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+        
+        /* Education & Certifications */
+        .edu-item {
+            margin-bottom: 16px;
+        }
+        
+        .edu-title {
+            font-weight: 600;
+            color: #2d3748;
+            font-size: 15px;
+        }
+        
+        .edu-subtitle {
+            color: #667eea;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+        
+        .edu-date {
+            font-size: 13px;
+            color: #718096;
+            margin-top: 2px;
+        }
+        
+        .cert-list {
+            list-style: none;
+        }
+        
+        .cert-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+            color: #4a5568;
+        }
+        
+        .cert-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .cert-list strong {
+            color: #2d3748;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+            
+            .header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header, .main-content {
+                padding: 30px;
+            }
+            
+            .name {
+                font-size: 36px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="name">ARMAN</h1>
+                <p class="title">QA Engineer | SDET (Fresher)</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
+                        Sonipat, Haryana
+                    </div>
+                    <div class="contact-item">
+                        <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+                        7082167660
+                    </div>
+                    <div class="contact-item">
+                        <svg fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+                        arounder263@gmail.com
+                    </div>
+                    <div class="contact-item">
+                        <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd"/></svg>
+                        linkedin.com/in/arman-qa
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Professional Summary -->
+            <section class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="summary">
+                    Detail-oriented QA Engineer and SDET with hands-on experience in Manual and Automation Testing using Cypress, Selenium, Java, and JavaScript. Strong understanding of SDLC, STLC, test case design techniques, API testing, and Agile methodology. Skilled in identifying defects, executing regression suites, and ensuring high-quality software delivery. Seeking an entry-level QA/SDET role to contribute to product quality and automation excellence.
+                </p>
+            </section>
+
+            <!-- Technical Skills -->
+            <section class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Testing Concepts</h4>
+                        <div class="skill-list">
+                            Manual Testing • Functional Testing • Regression Testing • Smoke Testing • Sanity Testing • UI Testing<br>
+                            SDLC • STLC • Defect Life Cycle<br>
+                            Test Case Design • Test Plan • Test Scenarios<br>
+                            Boundary Value Analysis (BVA) • Equivalence Partitioning
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Automation Testing</h4>
+                        <div class="skill-list">
+                            Cypress (UI Automation)<br>
+                            Selenium WebDriver<br>
+                            Page Object Model (POM)<br>
+                            Mocha • Cucumber (Basics)<br>
+                            TestNG (Basic Knowledge)
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>API Testing</h4>
+                        <div class="skill-list">
+                            Postman<br>
+                            REST API Testing<br>
+                            Request/Response Validation
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Tools</h4>
+                        <div class="skill-list">
+                            <strong>Languages:</strong> Java (Core) • JavaScript • SQL (MySQL)<br>
+                            <strong>Tools:</strong> Git • GitHub • JIRA • TestRail • Postman • VS Code • Chrome DevTools<br>
+                            <strong>Methodology:</strong> Agile (Scrum)
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Experience -->
+            <section class="section">
+                <h2 class="section-title">Project Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Web Automation Testing – E-commerce Platform</div>
+                            <div class="exp-company">QA Automation Engineer</div>
+                        </div>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Automated end-to-end test cases for Login, Product Search, Add to Cart, and Checkout flows using Cypress</li>
+                        <li>Designed scalable automation framework using Page Object Model (POM) for maintainability</li>
+                        <li>Implemented comprehensive assertions for UI validation and business logic verification</li>
+                        <li>Handled dynamic web elements using explicit waits and robust element identification strategies</li>
+                        <li>Executed regression and smoke test suites to ensure release quality</li>
+                        <li>Reported and tracked defects using JIRA with detailed reproduction steps</li>
+                        <li>Performed cross-browser testing to ensure compatibility across Chrome, Firefox, and Edge</li>
+                    </ul>
+                    <span class="tech-stack">Tech Stack: Cypress • JavaScript • Mocha • HTML • CSS</span>
+                </div>
+
+                <div class="experience-item">
+                    <div class="exp-header">
+                        <div>
+                            <div class="exp-title">Manual Testing Project – Business Application</div>
+                            <div class="exp-company">QA Tester</div>
+                        </div>
+                    </div>
+                    <ul class="exp-details">
+                        <li>Analyzed Business Requirement Documents (BRD) to understand functional specifications</li>
+                        <li>Created detailed Test Cases and Test Scenarios ensuring comprehensive coverage</li>
+                        <li>Performed Functional, Regression, Smoke, and UI Testing across multiple modules</li>
+                        <li>Logged and tracked defects with severity and priority classification in JIRA</li>
+                        <li>Ensured 100% requirement-to-test coverage using Requirement Traceability Matrix (RTM)</li>
+                        <li>Participated in Agile sprint planning, daily stand-ups, and retrospectives</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section class="section">
+                <h2 class="section-title">Education</h2>
+                <div class="edu-item">
+                    <div class="edu-title">Senior Secondary (12th Grade)</div>
+                    <div class="edu-date">Completed: 2022</div>
+                </div>
+            </section>
+
+            <!-- Certifications -->
+            <section class="section">
+                <h2 class="section-title">Certifications & Training</h2>
+                <ul class="cert-list">
+                    <li>
+                        <strong>SDET Training Program – Masai School</strong>
+                        Comprehensive training in Manual Testing, Automation Testing (Cypress & Selenium), Agile & Scrum Methodology, and Build-Week Project Experience
+                    </li>
+                    <li>
+                        <strong>AI Tools Workshop – Be10x</strong>
+                        Hands-on workshop covering modern AI tools for productivity and testing automation
+                    </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
